@@ -26,7 +26,15 @@ Content-Type: application/json
   "password": "PASSWORD"
 }
 
-###
+### 회원 정보 조회
 GET http://127.0.0.1:3000/users/1
 
-###
+### 메일 인증
+POST http://127.0.0.1:3000/users
+Content-Type: application/json
+
+{
+  "name": "wth",
+  "email": "wth2052@gmail.com",
+  "password": "qwe9qr"
+}
