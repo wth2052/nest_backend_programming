@@ -1,0 +1,8 @@
+POST 127.0.0.1:3000/users
+Content-Type: application/json
+
+{
+  "name": "MY NAME",
+  "email": "YOUR_EMAIL@gmail.com",
+  "password": "123456"
+}
