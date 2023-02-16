@@ -26,6 +26,6 @@ export class CreateUserDto {
   readonly email: string;
 
   @IsString()
-  @Matches(/^[A-za-z\d!@#$%^&*()]{8, 30}$/)
+  @Matches(/^[A-Za-z\d!@#$%^&*()]{8,30}$/)
   readonly password: string;
 }

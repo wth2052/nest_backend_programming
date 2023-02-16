@@ -2,9 +2,9 @@ POST 127.0.0.1:3000/users
 Content-Type: application/json
 
 {
-  "name": "MY NAME",
-  "email": "YOUR_EMAIL@gmail.com",
-  "password": "123456"
+  "name": "TaeHyeon",
+  "email": "taehyeon@test.com",
+  "password": "passwordasd"
 }
 
 ###
@@ -36,5 +36,5 @@ Content-Type: application/json
 {
   "name": "wth123",
   "email": "wth2052@gmail.com",
-  "password": "qwe9123412qr"
+  "password": "dnxogus123123"
 }
