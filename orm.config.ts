@@ -15,8 +15,8 @@ export class OrmConfig implements TypeOrmOptionsFactory {
       password: this.configService.get<string>('DATABASE_PASSWORD'),
       database: this.configService.get<string>('DATABASE_NAME'),
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true, // 연결될때 데이터베이스 초기화댐
-      migrations: [__dirname + '/**/migrations/*{.ts,.js}'],
+      synchronize: false, // 연결될때 데이터베이스 초기화댐
+      migrations: [__dirname + '/**/migrations/*.js'],
       migrationsTableName: 'migrations',
     };
   }
