@@ -69,7 +69,7 @@ export class UsersService {
     user.name = name;
     user.email = email;
     user.password = password;
-    user.signupVerifyToken = signupVerifyToken;
+    user.signupVerifyTokeen = signupVerifyToken;
     await this.userEntiyRepository.save(user); // 저장소를 이용하여 엔티티를 데이터베이스에 저장.
   }
 
