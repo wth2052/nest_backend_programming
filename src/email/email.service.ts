@@ -1,10 +1,9 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import Mail from 'nodemailer/lib/mailer';
 import * as nodemailer from 'nodemailer';
-import { ConfigService, ConfigType } from '@nestjs/config';
-import emailConfig from '../config/emailConfig';
+import { ConfigService } from '@nestjs/config';
 
-interface EmailOptions {
+interface EamilOptions {
   to: string;
   subject: string;
   html: string;
@@ -14,14 +13,12 @@ interface EmailOptions {
 export class EmailService {
   private transporter: Mail;
 
-  constructor(
-    @Inject(emailConfig.KEY) private config: ConfigType<typeof emailConfig>,
-  ) {
+  constructor(private readonly configService: ConfigService) {
     this.transporter = nodemailer.createTransport({
-      service: config.service,
+      service: this.configService.get('NODEMAILER_SERVICE'),
       auth: {
-        user: config.auth.user,
-        pass: config.auth.pass,
+        user: this.configService.get('NODEMAILER_EMAIL'),
+        pass: this.configService.get('NODEMAILER_PASSWORD'),
       },
     });
   }
@@ -30,12 +27,11 @@ export class EmailService {
     emailAddress: string,
     signupVerifyToken: string,
   ) {
-    const baseUrl = this.config.baseUrl;
+    const baseUrl = this.configService.get('NODEMAILER_BASEURL');
 
-    console.log('URL이야아압', baseUrl);
     const url = `${baseUrl}/users/email-verify?signupVerifyToken=${signupVerifyToken}`;
 
-    const mailOptions: EmailOptions = {
+    const mailOptions: EamilOptions = {
       to: emailAddress,
       subject: '가입 인증 메일',
       html: `

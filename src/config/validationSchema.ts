@@ -1,8 +1,8 @@
 import * as Joi from 'joi';
 
 export const validationSchema = Joi.object({
-  MAIL_SERVICE: Joi.string().required(),
-  MAIL_ID: Joi.string().required(),
-  MAIL_PASSWORD: Joi.string().required(),
-  MAIL_BASE_URL: Joi.string().required().uri(),
+  NODEMAILER_SERVICE: Joi.string().required(),
+  NODEMAILER_EMAIL: Joi.string().required(),
+  NODEMAILER_PASSWORD: Joi.string().required(),
+  NODEMAILER_BASEURL: Joi.string().required().uri(),
 });

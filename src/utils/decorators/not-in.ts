@@ -1,11 +1,11 @@
 import {
   registerDecorator,
-  ValidationArguments,
   ValidationOptions,
+  ValidationArguments,
 } from 'class-validator';
 
 export function NotIn(property: string, validationOptions?: ValidationOptions) {
-  return (object: Object, propertyName: string) => {
+  return (object, propertyName: string) => {
     registerDecorator({
       name: 'NotIn',
       target: object.constructor,
