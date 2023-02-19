@@ -2,9 +2,9 @@ POST 172.24.235.254:3000/users
 Content-Type: application/json
 
 {
-  "name": "TaeHyeon",
-  "email": "taehyeon@test.com",
-  "password": "passwordasd"
+  "name": "TaeHyeon1",
+  "email": "taehyeon@test1.com",
+  "password": "passwordasd1"
 }
 
 ###
