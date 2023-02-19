@@ -1,4 +1,4 @@
-POST 127.0.0.1:3000/users
+POST 172.24.235.254:3000/users
 Content-Type: application/json
 
 {
