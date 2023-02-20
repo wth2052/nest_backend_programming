@@ -17,7 +17,7 @@ export class CreateUserDto {
   //   return value.trim();
   // })
   @Transform((params) => params.value.trim())
-  @NotIn('password', { message: '비밀번호에 아이디가 들어갈 수 없습니다.' })
+  @NotIn('password', { message: '비밀번호에 아이디가 포함될 수 없습니다.' })
   @IsString()
   @MinLength(3)
   @MaxLength(20)

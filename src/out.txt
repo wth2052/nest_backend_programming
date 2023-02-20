@@ -1,0 +1,14 @@
+C:\Users\msk_0\Desktop\sparta\nestjs-backend-book\src
+├── auth
+├── config
+├── email
+├── logger
+├── migrations
+├── users
+|  ├── dto
+|  └── entity
+└── utils
+   └── decorators
+
+directory: 10
+

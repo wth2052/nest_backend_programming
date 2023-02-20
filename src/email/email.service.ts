@@ -3,7 +3,7 @@ import Mail from 'nodemailer/lib/mailer';
 import * as nodemailer from 'nodemailer';
 import { ConfigService } from '@nestjs/config';
 
-interface EamilOptions {
+interface EmailOptions {
   to: string;
   subject: string;
   html: string;
@@ -28,10 +28,10 @@ export class EmailService {
     signupVerifyToken: string,
   ) {
     const baseUrl = this.configService.get('NODEMAILER_BASEURL');
-
+    console.log('베이스', baseUrl);
     const url = `${baseUrl}/users/email-verify?signupVerifyToken=${signupVerifyToken}`;
 
-    const mailOptions: EamilOptions = {
+    const mailOptions: EmailOptions = {
       to: emailAddress,
       subject: '가입 인증 메일',
       html: `
