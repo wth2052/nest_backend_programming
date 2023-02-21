@@ -11,6 +11,9 @@ import { UsersController } from './users/users.controller';
 import { AuthModule } from './auth/auth.module';
 import authConfig from './config/authConfig';
 import { LoggingModule } from './logging/logging.module';
+import { HealthCheckController } from './health-check/health-check.controller';
+import { HttpModule } from '@nestjs/axios';
+import { TerminusModule } from '@nestjs/terminus';
 
 @Module({
   imports: [
@@ -26,9 +29,11 @@ import { LoggingModule } from './logging/logging.module';
     EmailModule,
     AuthModule,
     LoggingModule,
+    TerminusModule,
+    HttpModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [HealthCheckController],
+  providers: [HealthCheckController],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): any {

@@ -44,3 +44,7 @@ Content-Type: application/json
   "email": "wth2052@gmail.com",
   "password": "dnxogus123123"
 }
+
+### 헬스 체크
+GET http://127.0.0.1:3000/health-check
+
