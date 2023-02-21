@@ -1,4 +1,4 @@
-POST 172.18.131.137:3000/users
+POST 172.18.142.38:3000/users
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://172.18.131.137:3000/users/email-verify\?signupVerifyToken\=test_token
+POST http://172.18.142.38:3000/users/email-verify\?signupVerifyToken\=test_token
 Content-Type: application/json
 
 {
@@ -16,9 +16,9 @@ Content-Type: application/json
 }
 
 
-###curl -X POST http://127.0.0.1:3000/users/email-verify\?signupVerifyToken\=test_token
+### 로그인
 
-POST http://172.18.131.137:3000/users/login
+POST http://172.18.142.38:3000/users/login
 Content-Type: application/json
 
 {
@@ -27,10 +27,16 @@ Content-Type: application/json
 }
 
 ### 회원 정보 조회
-GET http://172.18.131.137:3000/users/3 q
+GET http://172.18.142.38:3000/users/01GSPS2F6TWDAZP70XMV217SRG
+Content-Type: application/json
 
+{
+  "id": "01GSPS2F6TWDAZP70XMV217SRG",
+  "name": "dnxogus",
+  "email": "wth2052@gmail.com"
+}
 ### 메일 인증
-POST http://172.18.131.137:3000/users
+POST http://172.18.142.38:3000/users
 Content-Type: application/json
 
 {

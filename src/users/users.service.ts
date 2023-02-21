@@ -172,10 +172,18 @@ export class UsersService {
 
   // 유저 정보 조희
   async getUserInfo(userId: string): Promise<UserInfo> {
-    // TODO
-    // 1. userId를 가진 유저가 존재하는지 DB에서 확인하고 없다면 에처리
-    // 2. 조회된 데이터를 UserInfo 타입으로 응답
+    const user = await this.userEntiyRepository.findOne({
+      where: { id: userId },
+    });
 
-    throw new Error('Method not implemented');
+    if (!user) {
+      throw new NotFoundException('유저가 존재하지 않습니다');
+    }
+
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+    };
   }
 }
