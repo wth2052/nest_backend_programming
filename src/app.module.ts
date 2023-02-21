@@ -5,11 +5,12 @@ import { ConfigModule } from '@nestjs/config';
 import { validationSchema } from './config/validationSchema';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { OrmConfig } from '../orm.config';
-import { LoggerMiddleware } from './logger/logger.middleware';
-import { Logger2Middleware } from './logger/logger2.middleware';
+import { LoggerMiddleware } from './logging/logger.middleware';
+import { Logger2Middleware } from './logging/logger2.middleware';
 import { UsersController } from './users/users.controller';
 import { AuthModule } from './auth/auth.module';
 import authConfig from './config/authConfig';
+import { LoggingModule } from './logging/logging.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import authConfig from './config/authConfig';
     UsersModule,
     EmailModule,
     AuthModule,
+    LoggingModule,
   ],
   controllers: [],
   providers: [],

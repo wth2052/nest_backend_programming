@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
-import { Logger3Middleware } from './logger/logger3.middleware';
+import { Logger3Middleware } from './logging/logger3.middleware';
 import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 import * as winston from 'winston';
 import {
