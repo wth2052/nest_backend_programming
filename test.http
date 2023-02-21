@@ -27,17 +27,17 @@ Content-Type: application/json
 }
 
 ### 회원 정보 조회
-GET localhost:3000/users/01GSSFXVNRM3P70DK90VRZE917
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxR1NTRlhWTlJNM1A3MERLOTBWUlpFOTE3IiwibmFtZSI6IuyasO2DnO2YhCIsImVtYWlsIjoid3RoMjA1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzY5NjY1NjUsImV4cCI6MTY3NzA1Mjk2NSwiYXVkIjoiZXhhbXBsZS5jb20iLCJpc3MiOiJleGFtcGxlLmNvbSJ9.bslJoqtc-UN0muzVD3GM7h1ZEvjhGqWUD8ktoaB238c
+GET localhost:3000/users/01GSSVG744SM7S24ZS8SP72TD4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxR1NTVkc3NDRTTTdTMjRaUzhTUDcyVEQ0IiwibmFtZSI6IuyasO2DnO2YhCIsImVtYWlsIjoid3RoMjA1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzY5Nzg3MDcsImV4cCI6MTY3NzA2NTEwNywiYXVkIjoiZXhhbXBsZS5jb20iLCJpc3MiOiJleGFtcGxlLmNvbSJ9.Le-77a8dS8lVdDti8c3SsQ4qsce3vvf9MvpZI_eeEDA
 
 ### 메일 인증
 POST localhost:3000/users/
 Content-Type: application/json
 
 {
-  "name": "성민섭",
-  "email": "ms_sh0728@naver.com",
-  "password": "asdf"
+  "name": "우태현",
+  "email": "wth2052@gmail.com",
+  "password": "dkssudgktpdygg"
 }
 
 ### Health-Check

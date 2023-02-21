@@ -8,10 +8,9 @@ import {
 import { CommandHandler, EventBus, ICommandHandler } from '@nestjs/cqrs';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, Repository } from 'typeorm';
-import { UserEntity } from '../entity/user.entity';
+import { UserEntity } from '../../infra/db/entity/user.entity';
 import { CreateUserCommand } from './create-user.command';
-import { UserCreatedEvent } from '../event/user-created.event';
-import { TestEvent } from '../event/test.event';
+import { UserCreatedEvent } from '../../domain/user-created.event';
 
 @Injectable()
 @CommandHandler(CreateUserCommand)
@@ -42,7 +41,6 @@ export class CreateUserHandler implements ICommandHandler<CreateUserCommand> {
     );
 
     this.eventBus.publish(new UserCreatedEvent(email, signupVerifyToken));
-    this.eventBus.publish(new TestEvent());
   }
 
   private async checkUserExists(emailAddress: string): Promise<boolean> {
