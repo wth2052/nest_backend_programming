@@ -13,6 +13,7 @@ export class AuthGuard implements CanActivate {
 
   private validateRequest(request: any) {
     const jwtString = request.headers.authorization.split('Bearer ')[1];
+    console.log(jwtString);
     this.authService.verify(jwtString);
     return true;
   }

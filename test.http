@@ -1,50 +1,45 @@
-POST 172.18.142.38:3000/users
+### 회원가입
+POST localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "dnxogus",
+  "name": "우태현",
   "email": "wth2052@gmail.com",
-  "password": "password1234"
+  "password": "dkssudgktpdygg"
 }
 
-###
-POST http://172.18.142.38:3000/users/email-verify\?signupVerifyToken\=test_token
+### 이메일
+//curl -X POST http://127.0.0.1:3000/users/email-verify\?signupVerifyToken\=test_token
+POST localhost:3000/users/email-verify
 Content-Type: application/json
 
 {
-  "signupVerifyToken" : "test_token"
+  "signupVerifyToken": "test_token"
 }
-
 
 ### 로그인
-
-POST http://172.18.142.38:3000/users/login
+POST localhost:3000/users/login
 Content-Type: application/json
 
 {
   "email": "wth2052@gmail.com",
-  "password": "password1234"
+  "password": "dkssudgktpdygg"
 }
 
 ### 회원 정보 조회
-GET http://172.18.142.38:3000/users/01GSPS2F6TWDAZP70XMV217SRG
-Content-Type: application/json
+GET localhost:3000/users/01GSSFXVNRM3P70DK90VRZE917
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxR1NTRlhWTlJNM1A3MERLOTBWUlpFOTE3IiwibmFtZSI6IuyasO2DnO2YhCIsImVtYWlsIjoid3RoMjA1MkBnbWFpbC5jb20iLCJpYXQiOjE2NzY5NjY1NjUsImV4cCI6MTY3NzA1Mjk2NSwiYXVkIjoiZXhhbXBsZS5jb20iLCJpc3MiOiJleGFtcGxlLmNvbSJ9.bslJoqtc-UN0muzVD3GM7h1ZEvjhGqWUD8ktoaB238c
 
-{
-  "id": "01GSPS2F6TWDAZP70XMV217SRG",
-  "name": "dnxogus",
-  "email": "wth2052@gmail.com"
-}
 ### 메일 인증
-POST http://172.18.142.38:3000/users
+POST localhost:3000/users/
 Content-Type: application/json
 
 {
-  "name": "wth123",
-  "email": "wth2052@gmail.com",
-  "password": "dnxogus123123"
+  "name": "성민섭",
+  "email": "ms_sh0728@naver.com",
+  "password": "asdf"
 }
 
-### 헬스 체크
-GET http://127.0.0.1:3000/health-check
-
+### Health-Check
+GET http://localhost:3000/health-check
+Content-Type: application/json

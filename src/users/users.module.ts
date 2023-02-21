@@ -32,6 +32,6 @@ const eventHandlers = [UserEventsHandler];
     CqrsModule,
   ],
   controllers: [UsersController],
-  providers: [...commandHandlers, ...queryHandlers, Logger, ...eventHandlers],
+  providers: [...commandHandlers, ...queryHandlers, ...eventHandlers, Logger],
 })
 export class UsersModule {}

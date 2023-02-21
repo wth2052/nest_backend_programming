@@ -13,27 +13,31 @@ interface User {
 
 @Injectable()
 @CommandHandler(VerifyAccessTokenCommand)
-export class VerifyAccessTokenHandler implements ICommandHandler<VerifyAccessTokenCommand> {
+export class VerifyAccessTokenHandler
+  implements ICommandHandler<VerifyAccessTokenCommand>
+{
   constructor(
     @Inject(authConfig.KEY) private config: ConfigType<typeof authConfig>,
-  ) { }
+  ) {}
 
   async execute(command: VerifyAccessTokenCommand) {
     const { jwtString } = command;
 
     try {
-      const payload = jwt.verify(jwtString, this.config.jwtSecret) as (jwt.JwtPayload | string) & User;
-
+      const payload = jwt.verify(jwtString, this.config.jwtSecret) as (
+        | jwt.JwtPayload
+        | string
+      ) &
+        User;
+      console.log('토큰', this.config.jwtSecret);
       const { id, email } = payload;
 
       return {
         userId: id,
         email,
-      }
-
+      };
     } catch (e) {
-      throw new UnauthorizedException()
+      throw new UnauthorizedException();
     }
   }
-
 }
