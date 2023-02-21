@@ -6,7 +6,7 @@ import { User } from './user';
 @Injectable()
 export class UserFactory {
   // EventBus를 주입합니다.
-  constructor(private eventBus: EventBus) { }
+  constructor(private eventBus: EventBus) {}
 
   // 유저 객체를 생성하는 create 함수를 제공.
   create(

@@ -5,7 +5,8 @@ export class User {
     private email: string,
     private password: string,
     private signupVerifyToken: string,
-  ) { }
+
+  ) {}
 
   getId(): Readonly<string> {
     return this.id;
